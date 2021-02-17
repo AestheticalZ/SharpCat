@@ -1,9 +1,0 @@
-C:\Users\cakea\source\repos\SharpCat\bin\Debug\netcoreapp3.1\SharpCat.deps.json
-C:\Users\cakea\source\repos\SharpCat\bin\Debug\netcoreapp3.1\SharpCat.dll
-C:\Users\cakea\source\repos\SharpCat\bin\Debug\netcoreapp3.1\SharpCat.pdb
-C:\Users\cakea\source\repos\SharpCat\obj\Debug\netcoreapp3.1\SharpCat.csprojAssemblyReference.cache
-C:\Users\cakea\source\repos\SharpCat\obj\Debug\netcoreapp3.1\SharpCat.AssemblyInfoInputs.cache
-C:\Users\cakea\source\repos\SharpCat\obj\Debug\netcoreapp3.1\SharpCat.AssemblyInfo.cs
-C:\Users\cakea\source\repos\SharpCat\obj\Debug\netcoreapp3.1\SharpCat.csproj.CoreCompileInputs.cache
-C:\Users\cakea\source\repos\SharpCat\obj\Debug\netcoreapp3.1\SharpCat.dll
-C:\Users\cakea\source\repos\SharpCat\obj\Debug\netcoreapp3.1\SharpCat.pdb
