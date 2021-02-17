@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "SYVooNyMrXYIkRYzumE/Epml+TCAt/3vZRe1IFDskcvZswmiSfRutv7e23YGlgMXVKx0uqo2LwiDWiEiIVgGYg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\cakea\\source\\repos\\SharpCat\\SharpCat.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\cakea\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
