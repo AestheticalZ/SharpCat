@@ -119,12 +119,19 @@ namespace SharpCat.Types.Cat
         public CatBreed[] Breeds { get; set; }
     }
 
-    public class CatSearchParams
+    public class CatImageSearchParams
     {
         public bool has_breeds { get; set; }
         public string mime_types { get; set; }
         public string size { get; set; }
         public string sub_id { get; set; }
+        public int limit { get; set; }
+    }
+
+    public class CatBreedSearchParams
+    {
+        public int attach_breed { get; set; }
+        public int page { get; set; }
         public int limit { get; set; }
     }
 }

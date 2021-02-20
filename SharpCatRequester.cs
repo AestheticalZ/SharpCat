@@ -30,13 +30,13 @@ namespace SharpCat.Requester.Cat
         /// <summary>
         /// This function gets an image from the cat API.
         /// </summary>
-        /// <param name="searchParams">The <c>SearchParams</c> object that controls the configuration.</param>
+        /// <param name="searchParams">The <c>CatImageSearchParams</c> object that controls the configuration.</param>
         /// <returns>
         /// An array of <c>CatImage</c> objects containing the image data.
         /// </returns>
         /// <exception cref="JsonSerializationException">Thrown when the downloaded data
         /// is invalid for JSON parsing.</exception>
-        public async Task<List<CatImage>> GetImageAsync(CatSearchParams searchParams)
+        public async Task<List<CatImage>> GetImageAsync(CatImageSearchParams searchParams)
         {
             string queryString = GetQueryString(searchParams);
             string jsonReply = string.Empty;
@@ -48,6 +48,51 @@ namespace SharpCat.Requester.Cat
             List<CatImage> imagesReply = JsonConvert.DeserializeObject<List<CatImage>>(jsonReply);
 
             return imagesReply;
+        }
+
+        /// <summary>
+        /// This function gets a list of breeds from the cat API.
+        /// </summary>
+        /// <param name="searchParams">The <c>CatBreedSearchParams</c> object that controls the configuration.</param>
+        /// <returns>
+        /// An array of <c>CatBreed</c> objects containing the breed data.
+        /// </returns>
+        /// <exception cref="JsonSerializationException">Thrown when the downloaded data
+        /// is invalid for JSON parsing.</exception>
+        public async Task<List<CatBreed>> GetBreedsAsync(CatBreedSearchParams searchParams)
+        {
+            string queryString = GetQueryString(searchParams);
+            string jsonReply = string.Empty;
+
+            using(HttpResponseMessage response = await httpClient.GetAsync($"v1/breeds?{queryString}"))
+            {
+                jsonReply = await response.Content.ReadAsStringAsync();
+            }
+            List<CatBreed> breedsReply = JsonConvert.DeserializeObject<List<CatBreed>>(jsonReply);
+
+            return breedsReply;
+        }
+
+        /// <summary>
+        /// This function gets a single breed from the cat API.
+        /// </summary>
+        /// <param name="breedName">The string object that contains the name of the breed. For example, "sib" for Siberian.</param>
+        /// <returns>
+        /// An array of <c>CatBreed</c> objects containing the breed data.
+        /// </returns>
+        /// <exception cref="JsonSerializationException">Thrown when the downloaded data
+        /// is invalid for JSON parsing.</exception>
+        public async Task<List<CatBreed>> GetBreedAsync(string breedName)
+        {
+            string jsonReply = string.Empty;
+
+            using (HttpResponseMessage response = await httpClient.GetAsync($"v1/breeds/search?q={breedName}"))
+            {
+                jsonReply = await response.Content.ReadAsStringAsync();
+            }
+            List<CatBreed> breedsReply = JsonConvert.DeserializeObject<List<CatBreed>>(jsonReply);
+
+            return breedsReply;
         }
 
         private string GetQueryString(object obj)
