@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharpCat", "SharpCat.csproj", "{AA4D3EA4-E43E-452B-BC55-DE137B5CA06A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpCatTester", "..\SharpCatTester\SharpCatTester.csproj", "{576D54E9-E04B-4C76-B4F8-0DFBDAD6B8B9}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{AA4D3EA4-E43E-452B-BC55-DE137B5CA06A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA4D3EA4-E43E-452B-BC55-DE137B5CA06A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA4D3EA4-E43E-452B-BC55-DE137B5CA06A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{576D54E9-E04B-4C76-B4F8-0DFBDAD6B8B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{576D54E9-E04B-4C76-B4F8-0DFBDAD6B8B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{576D54E9-E04B-4C76-B4F8-0DFBDAD6B8B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{576D54E9-E04B-4C76-B4F8-0DFBDAD6B8B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
