@@ -93,12 +93,19 @@ namespace SharpCat.Types.Dog
         public DogBreed[] Breeds { get; set; }
     }
 
-    public class DogSearchParams
+    public class DogImageSearchParams
     {
         public bool has_breeds { get; set; }
         public string mime_types { get; set; }
         public string size { get; set; }
         public string sub_id { get; set; }
+        public int limit { get; set; }
+    }
+
+    public class DogBreedSearchParams
+    {
+        public int attach_breed { get; set; }
+        public int page { get; set; }
         public int limit { get; set; }
     }
 }
