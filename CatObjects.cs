@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System.Collections.Generic;
 
 namespace SharpCat.Types.Cat
 {
@@ -119,6 +118,40 @@ namespace SharpCat.Types.Cat
         public CatBreed[] Breeds { get; set; }
     }
 
+    public class CatVote
+    {
+        [JsonProperty("value")]
+        public int Value { get; set; }
+        [JsonProperty("image_id")]
+        public string Imageid { get; set; }
+        [JsonProperty("sub_id")]
+        public string SubId { get; set; }
+        [JsonProperty("created_at")]
+        public string CreatedAt { get; set; }
+        [JsonProperty("id")]
+        public string Id { get; set; }
+        [JsonProperty("country_code")]
+        public string CountryCode { get; set; }
+    }
+
+    public class CatVoteReply
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+        [JsonProperty("id")]
+        public int Id { get; set; }
+    }
+
+    public class CatVotePost
+    {
+        [JsonProperty("image_id")]
+        public string Imageid { get; set; }
+        [JsonProperty("sub_id")]
+        public string SubId { get; set; }
+        [JsonProperty("value")]
+        public int Value { get; set; }
+    }
+
     public class CatImageSearchParams
     {
         public bool has_breeds { get; set; }
@@ -133,5 +166,18 @@ namespace SharpCat.Types.Cat
         public int attach_breed { get; set; }
         public int page { get; set; }
         public int limit { get; set; }
+    }
+
+    public class CatVoteSearchParams
+    {
+        public string sub_id { get; set; }
+        public int page { get; set; }
+        public int limit { get; set; }
+    }
+
+    public class CatCategorySearchParams
+    {
+        public int limit { get; set; }
+        public int page { get; set; }
     }
 }

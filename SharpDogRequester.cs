@@ -1,12 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using SharpCat.Types.Dog;
+using SharpCat.Utils;
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using System.Web;
-using Newtonsoft.Json;
-using SharpCat.Types.Dog;
 
 namespace SharpCat.Requester.Dog
 {
@@ -37,7 +36,7 @@ namespace SharpCat.Requester.Dog
         /// is invalid for JSON parsing.</exception>
         public async Task<List<DogImage>> GetImageAsync(DogImageSearchParams searchParams)
         {
-            string queryString = GetQueryString(searchParams);
+            string queryString = Utility.GetQueryString(searchParams);
             string jsonReply = string.Empty;
 
             using (HttpResponseMessage response = await httpClient.GetAsync($"v1/images/search?{queryString}"))
@@ -60,7 +59,7 @@ namespace SharpCat.Requester.Dog
         /// is invalid for JSON parsing.</exception>
         public async Task<List<DogBreed>> GetBreedsAsync(DogBreedSearchParams searchParams)
         {
-            string queryString = GetQueryString(searchParams);
+            string queryString = Utility.GetQueryString(searchParams);
             string jsonReply = string.Empty;
 
             using (HttpResponseMessage response = await httpClient.GetAsync($"v1/breeds?{queryString}"))
@@ -92,15 +91,6 @@ namespace SharpCat.Requester.Dog
             List<DogBreed> breedsReply = JsonConvert.DeserializeObject<List<DogBreed>>(jsonReply);
 
             return breedsReply;
-        }
-
-        private string GetQueryString(object obj)
-        {
-            var properties = from p in obj.GetType().GetProperties()
-                             where p.GetValue(obj, null) != null
-                             select p.Name + "=" + HttpUtility.UrlEncode(p.GetValue(obj, null).ToString());
-
-            return string.Join("&", properties.ToArray());
         }
     }
 }
